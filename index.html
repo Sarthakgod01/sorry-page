@@ -10,19 +10,23 @@ button{display:none;margin:20px auto 0;padding:12px 24px;background:#2563eb;colo
 <div id='env'>📩 Click to Open</div>
 <div class='card' id='card'><h1>I'm Really Sorry 🥺</h1><div id='msg'></div><button id='next'>Click Here</button><p id='end' style='display:none;text-align:center;font-weight:bold'>Thank you for reading. 🥺</p></div>
 <script>
-const txt=`Hi Ruhii,
+const txt=`I'm really sorry Ruhi. 🥺
 
-I know you're upset with me.
+First of all, I want to say that my intention was only to make a joke. I never wanted to hurt you or make you feel bad.
 
-I'm truly sorry for hurting you.
-Our friendship means a lot to me.
+I think there has been some misunderstanding between us. If there is anything that I've said or done that was misunderstood, I hope you'll give me a chance to clear it up.
 
-I'm not asking for instant forgiveness.
-Please take your time.
+Please accept my friend request whenever you feel comfortable. I'm not trying to force you—I just don't want this misunderstanding to end our friendship.
 
-I just wanted you to know that this apology is genuine.
+Your friendship means a lot to me. I don't have any friend like you, and losing someone as important as you would really hurt me.
 
-Thank you for reading this. 🥺`;
+I'm not asking you to forgive me immediately. Take all the time you need. I just wanted you to know that this apology is genuine and comes from my heart.
+
+No matter what you decide, thank you for taking the time to read this.
+
+I truly hope we can play games together like before and laugh again someday. 🥺
+
+I'm really sorry. 🥺`;`;
 let i=0;
 function type(){if(i<txt.length){msg.textContent+=txt[i++];setTimeout(type,30);}else next.style.display='block';}
 env.onclick=()=>{env.style.display='none';card.style.display='block';type();}
