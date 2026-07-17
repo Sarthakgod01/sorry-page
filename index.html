@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>I'm Sorry</title><style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden;font-family:Arial,sans-serif;background:linear-gradient(-45deg,#89cff0,#cdb4ff,#bde0fe,#d8f3dc);background-size:400% 400%;animation:bg 15s ease infinite}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+#env{padding:30px 40px;border-radius:20px;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);color:#fff;font-size:28px;cursor:pointer}
+.card{display:none;width:min(92%,720px);background:rgba(255,255,255,.88);padding:28px;border-radius:24px}
+#msg{white-space:pre-wrap;line-height:1.8;min-height:280px}
+button{display:none;margin:20px auto 0;padding:12px 24px;background:#2563eb;color:#fff;border:0;border-radius:10px}
+.e{position:absolute;opacity:.45;font-size:28px;animation:rise linear infinite}@keyframes rise{from{transform:translateY(110vh)}to{transform:translateY(-15vh)}}
+</style></head><body>
+<div id='env'>📩 Click to Open</div>
+<div class='card' id='card'><h1>I'm Really Sorry 🥺</h1><div id='msg'></div><button id='next'>Click Here</button><p id='end' style='display:none;text-align:center;font-weight:bold'>Thank you for reading. 🥺</p></div>
+<script>
+const txt=`Hi Ruhii,
+
+I know you're upset with me.
+
+I'm truly sorry for hurting you.
+Our friendship means a lot to me.
+
+I'm not asking for instant forgiveness.
+Please take your time.
+
+I just wanted you to know that this apology is genuine.
+
+Thank you for reading this. 🥺`;
+let i=0;
+function type(){if(i<txt.length){msg.textContent+=txt[i++];setTimeout(type,30);}else next.style.display='block';}
+env.onclick=()=>{env.style.display='none';card.style.display='block';type();}
+next.onclick=()=>{next.style.display='none';end.style.display='block';}
+for(let i=0;i<30;i++){let d=document.createElement('div');d.className='e';d.textContent='🥺';d.style.left=Math.random()*100+'vw';d.style.animationDuration=(8+Math.random()*8)+'s';d.style.animationDelay=(-Math.random()*8)+'s';document.body.appendChild(d);}
+</script></body></html>
