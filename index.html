@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#f6f7fb,#dfe9f3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+/* Floating 🥺 */
+.emoji{
+    position:absolute;
+    font-size:28px;
+    animation:float 8s linear infinite;
+    opacity:.5;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-120px);
+    }
+}
+
+.card{
+    width:90%;
+    max-width:600px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    text-align:center;
+    z-index:2;
+}
+
+h1{
+    color:#444;
+    margin-bottom:20px;
+}
+
+p{
+    color:#666;
+    line-height:1.8;
+    font-size:18px;
+}
+
+button{
+    margin-top:30px;
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    background:#4a90e2;
+    color:white;
+    cursor:pointer;
+    font-size:17px;
+}
+
+button:hover{
+    background:#357ABD;
+}
+
+#reply{
+    margin-top:20px;
+    color:#444;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>I'm Really Sorry 🥺</h1>
+
+<p>
+Hi <b>[Ruhii]</b>,
+<br><br>
+
+I know you're upset with me, and I understand why.
+I just want you to know that I'm genuinely sorry.
+
+Hurting you was never my intention, and I feel bad that I did.
+You've been an important friend to me, and I don't want one mistake to define our friendship.
+
+I'm not expecting you to forgive me right away.
+Take all the time you need.
+
+I only hope that someday you'll give me a chance to make things right.
+
+Thank you for reading this.
+🥺
+</p>
+
+<button onclick="message()">Click Here</button>
+
+<p id="reply"></p>
+</div>
+
+<script>
+function message(){
+document.getElementById("reply").innerHTML =
+"Thank you for reading this. No matter what, I'm truly sorry. 🥺";
+}
+
+for(let i=0;i<25;i++){
+let e=document.createElement("div");
+e.className="emoji";
+e.innerHTML="🥺";
+e.style.left=Math.random()*100+"vw";
+e.style.animationDuration=(6+Math.random()*6)+"s";
+e.style.animationDelay=Math.random()*6+"s";
+document.body.appendChild(e);
+}
+</script>
+
+</body>
+</html>
