@@ -402,7 +402,156 @@ I'm really sorry🥺.
 
 <script>
 
-/* JavaScript WILL COME IN PART 3 */
+// -----------------------------
+// YOUR APOLOGY MESSAGE
+// -----------------------------
+
+const apology = `I'm really sorry. 🥺
+
+First of all, I want to say that my intention was only to make a joke. I never wanted to hurt you or make you feel bad.
+
+I think there has been some misunderstanding between us. If there is anything that I've said or done that was misunderstood, I hope you'll give me a chance to clear it up.
+
+Please accept my friend request whenever you feel comfortable. I'm not trying to force you—I just don't want this misunderstanding to end our friendship.
+
+Your friendship means a lot to me.
+
+I don't have any friend like you.
+
+Take all the time you need.
+
+I truly hope we can play games together like before.
+
+I'm really sorry. 🥺`;
+
+
+// -----------------------------
+// ELEMENTS
+// -----------------------------
+
+const typewriter = document.getElementById("typewriter");
+const nextBtn = document.getElementById("nextBtn");
+const thanksPage = document.getElementById("thanksPage");
+const envelope = document.querySelector(".envelope");
+const emojiContainer = document.querySelector(".emoji-container");
+
+
+// -----------------------------
+// TYPEWRITER EFFECT
+// -----------------------------
+
+let i = 0;
+
+function typeText(){
+
+    if(i < apology.length){
+
+        typewriter.textContent += apology.charAt(i);
+
+        i++;
+
+        setTimeout(typeText,25);
+
+    }
+
+    else{
+
+        nextBtn.style.display="block";
+
+    }
+
+}
+
+typeText();
+
+
+// -----------------------------
+// FLOATING EMOJIS
+// -----------------------------
+
+function createEmoji(){
+
+    const emoji=document.createElement("div");
+
+    emoji.className="emoji";
+
+    emoji.innerHTML="🥺";
+
+    emoji.style.left=Math.random()*100+"vw";
+
+    emoji.style.animationDuration=(8+Math.random()*8)+"s";
+
+    emoji.style.fontSize=(22+Math.random()*18)+"px";
+
+    emojiContainer.appendChild(emoji);
+
+    setTimeout(()=>{
+
+        emoji.remove();
+
+    },16000);
+
+}
+
+setInterval(createEmoji,700);
+
+
+// -----------------------------
+// CURSOR GLOW
+// -----------------------------
+
+const glow=document.createElement("div");
+
+glow.style.position="fixed";
+glow.style.width="20px";
+glow.style.height="20px";
+glow.style.borderRadius="50%";
+glow.style.background="rgba(255,255,255,.6)";
+glow.style.pointerEvents="none";
+glow.style.filter="blur(10px)";
+glow.style.zIndex="999";
+
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove",e=>{
+
+    glow.style.left=e.clientX-10+"px";
+
+    glow.style.top=e.clientY-10+"px";
+
+});
+
+
+// -----------------------------
+// ENVELOPE ANIMATION
+// -----------------------------
+
+envelope.addEventListener("click",()=>{
+
+    envelope.style.transform="scale(1.03)";
+
+    setTimeout(()=>{
+
+        envelope.style.transform="scale(1)";
+
+    },300);
+
+});
+
+
+// -----------------------------
+// CLICK HERE BUTTON
+// -----------------------------
+
+nextBtn.addEventListener("click",()=>{
+
+    typewriter.style.display="none";
+
+    nextBtn.style.display="none";
+
+    thanksPage.style.display="block";
+
+});
 
 </script>
 
